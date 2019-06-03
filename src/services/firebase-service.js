@@ -18,9 +18,9 @@ class FirebaseService {
     return new Promise(function(resolve, reject) {
       try {
         return ref.once("value", function(snapshot) {
-          let _Order = snapshot.val();
+          let _order = snapshot.val();
 
-          return resolve(JSON.stringify(_Order));
+          return resolve(JSON.stringify(_order));
         });
       } catch (e) {
         return reject(e);
