@@ -23,6 +23,15 @@ class LineMessaging {
                 return resolve(rs);
               });
           });
+        } else if (message == "Contact") {
+          return firebaseService.getHogwartHouses().then(function(rsHouses) {
+            _messages[0].text = rsHouses;
+            return lineApiService
+              .reply(replyToken, _messages)
+              .then(function(rs) {
+                return resolve(rs);
+              });
+          });
         } else {
           return lineApiService.reply(replyToken, _messages).then(function(rs) {
             return resolve(rs);

@@ -12,6 +12,7 @@ class FirebaseService {
     db = firebase.database();
 
     ref = db.ref("Order");
+    ref = db.ref("Contact");
   }
 
   getHogwartHouses() {
