@@ -2,6 +2,7 @@ const server = require("express");
 const PORT = process.env.PORT || 9999;
 const request = require("request");
 const bodyParser = require("body-parser");
+const lineMessaging = require("./src/classes/line-messaging");
 
 server()
   .use(bodyParser.json())
@@ -17,9 +18,13 @@ server()
     console.log(`Message token : ${replyToken}`);
     console.log(`Message from chat : ${msg}`);
 
-    res.json({
-      status: 200,
-      message: `Webhook is working!`
+    lineMessaging.replyMessage(replyToken, message).then(function(rs) {
+      console.log(`Reply message result : ${rs}`);
+
+      res.json({
+        status: 200,
+        message: `Webhook is working!`
+      });
     });
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
