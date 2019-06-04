@@ -15,7 +15,7 @@ class LineMessaging {
         ];
         //check call database
         if (message == "Order") {
-          return firebaseService.getHogwartHouses().then(function(rsHouses) {
+          return firebaseService.getOrder().then(function(rsHouses) {
             _messages[0].text = rsHouses;
             return lineApiService
               .reply(replyToken, _messages)
@@ -24,7 +24,7 @@ class LineMessaging {
               });
           });
         } else if (message == "Contact") {
-          return firebaseService.getHogwartHouses().then(function(rsHouses) {
+          return firebaseService.getContact().then(function(rsHouses) {
             _messages[0].text = rsHouses;
             return lineApiService
               .reply(replyToken, _messages)
