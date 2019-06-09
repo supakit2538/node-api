@@ -14,7 +14,7 @@ class LineMessaging {
             _messages[0].text = rsHouses;
             console.log("rsHouses == ", rsHouses);
             console.log(
-              "_messages[0].text = rsHouses; ",
+              "Return call check data == ",
               (_messages[0].text = rsHouses)
             );
             return lineApiService
