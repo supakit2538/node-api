@@ -29,6 +29,7 @@ class LineMessaging {
             return lineApiService
               .reply(replyToken, _messages)
               .then(function(rs) {
+                console.log(`Message from Contact : ${rs}`);
                 return resolve(rs);
               });
           });
