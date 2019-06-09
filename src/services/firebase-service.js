@@ -32,7 +32,7 @@ class FirebaseService {
       try {
         return refCont.once("value", function(snapshot) {
           let _order = snapshot.val();
-
+          console.log("reply contact = " + _order);
           return resolve(JSON.stringify(_order));
         });
       } catch (e) {
