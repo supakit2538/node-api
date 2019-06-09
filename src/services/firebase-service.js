@@ -20,7 +20,7 @@ class FirebaseService {
       try {
         return ref.once("value", function(snapshot) {
           let _order = snapshot.val();
-          return resolve(JSON.stringify(_order));
+          return _order[0].text;
         });
       } catch (e) {
         return reject(e);

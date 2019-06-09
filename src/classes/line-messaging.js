@@ -195,7 +195,7 @@ class LineMessaging {
             console.log("rsHouses == ", rsHouses);
             console.log(
               "_messages[0].text = rsHouses; ",
-              (_messages.contents.body.contents[0].text = rsHouses)
+              (_messages[0].text = rsHouses)
             );
             return lineApiService
               .reply(replyToken, _messages)
