@@ -17,6 +17,10 @@ class LineMessaging {
         if (message == "Order") {
           return firebaseService.getOrder().then(function(rsHouses) {
             _messages[0].text = rsHouses;
+            console.log(
+              "_messages[0].text = rsHouses; ",
+              (_messages[0].text = rsHouses)
+            );
             return lineApiService
               .reply(replyToken, _messages)
               .then(function(rs) {
